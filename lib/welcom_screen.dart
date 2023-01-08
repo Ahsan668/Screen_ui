@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:screen_ui/home_screen.dart';
@@ -17,23 +16,23 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      defaultTransition: Transition.leftToRightWithFade,
-      transitionDuration: Duration(milliseconds: 5000),
-      // getPages: GetAppRoute().PageRoute(),
+      // defaultTransition: Transition.leftToRightWithFade,
+      // transitionDuration: Duration(milliseconds: 5000),
+      // // getPages: GetAppRoute().PageRoute(),
   //    initialRoute: '/WelcomeScreen',
-       getPages: [
-  //       GetPage(name: '/', page: () => const WelcomeScreen()),
-         GetPage(name: '/LoginScreen', page: () => const LoginScreen()),
-         GetPage(name: '/SignupScreen', page: () => const SignupScreen()),
-         GetPage(name: '/HomeScreen', page: () => const HomeScreen()),
-  //       GetPage(name: '/JellyProfileScreen', page: () => const JellyProfileScreen()),
-  //       GetPage(name: '/DonyProfileScreen', page: () => const DonyProfileScreen()),
-  //       GetPage(name: '/HritikProfileScreen', page: () => const HritikProfileScreen()),
-  //       GetPage(name: '/SrkProfileScreen', page: () => const SrkProfileScreen()),
-  //       GetPage(name: '/SandyProfileScreen', page: () => const SandyProfileScreen()),
-       ],
+  //      getPages: [
+  // //       GetPage(name: '/', page: () => const WelcomeScreen()),
+  //        GetPage(name: '/LoginScreen', page: () => const LoginScreen()),
+  //        GetPage(name: '/SignupScreen', page: () => const SignupScreen()),
+  //        GetPage(name: '/HomeScreen', page: () => const HomeScreen()),
+  // //       GetPage(name: '/JellyProfileScreen', page: () => const JellyProfileScreen()),
+  // //       GetPage(name: '/DonyProfileScreen', page: () => const DonyProfileScreen()),
+  // //       GetPage(name: '/HritikProfileScreen', page: () => const HritikProfileScreen()),
+  // //       GetPage(name: '/SrkProfileScreen', page: () => const SrkProfileScreen()),
+  // //       GetPage(name: '/SandyProfileScreen', page: () => const SandyProfileScreen()),
+  //      ],
        home: Container(
         color: const Color(0xff333436),
         child: Stack(
@@ -49,15 +48,15 @@ class WelcomeScreen extends StatelessWidget {
             Positioned(
               bottom: -100,
               right: -100,
-              child: Image.asset("assets/images/bot.png"),
               width: 240,
+              child: Image.asset("assets/images/bot.png"),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.only(top: 160, left: 20),
+                  padding: const EdgeInsets.only(top: 160, left: 20),
                   child: Text(
                     "Subscribe our channel Sag Skills",
                     style: GoogleFonts.rubik(
@@ -70,11 +69,11 @@ class WelcomeScreen extends StatelessWidget {
                     )),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                     left: 20,
                     right: 70,
                   ),
@@ -90,16 +89,22 @@ class WelcomeScreen extends StatelessWidget {
                     )),
                   ),
                 ),
-                SizedBox(height: 80),
+                const SizedBox(height: 80),
                 Container(
                   margin: const EdgeInsets.only(left: 50, right: 50),
                   alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(6),
+                      gradient:
+                          const LinearGradient(colors: [Colors.white, Colors.grey])),
                   child: SizedBox(
                     width: 323,
                     height: 42,
                     child: ElevatedButton(
                       onPressed: () {
-                        Get.toNamed('/HomeScreen');
+                        Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LoginScreen() )
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.transparent,
@@ -114,10 +119,6 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6),
-                      gradient:
-                          LinearGradient(colors: [Colors.white, Colors.grey])),
                 ),
                 const SizedBox(
                   height: 20,
@@ -125,12 +126,21 @@ class WelcomeScreen extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.only(left: 50, right: 50),
                   alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(6),
+                    gradient: const LinearGradient(colors: [
+                      Colors.orangeAccent,
+                      Colors.deepOrangeAccent,
+                    ]),
+                  ),
                   child: SizedBox(
                     width: 323,
                     height: 42,
                     child: ElevatedButton(
                       onPressed: () {
-                        Get.toNamed('/SignupScreen');
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => SignupScreen() )
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.transparent,
@@ -144,13 +154,6 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(6),
-                    gradient: LinearGradient(colors: [
-                      Colors.orangeAccent,
-                      Colors.deepOrangeAccent,
-                    ]),
                   ),
                 ),
                 const SizedBox(

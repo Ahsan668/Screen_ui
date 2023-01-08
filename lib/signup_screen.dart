@@ -2,12 +2,14 @@ import"package:flutter/material.dart";
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
+import 'package:screen_ui/login_screen.dart';
+
+import 'home_screen.dart';
 class SignupScreen extends StatelessWidget {
-  const SignupScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Container(
         color: const Color(0xff333436),
@@ -168,7 +170,11 @@ class SignupScreen extends StatelessWidget {
                   alignment: Alignment.center,
                   child: SizedBox(width: 323, height: 22,
                   child: ElevatedButton(
-                      onPressed: (){},
+                      onPressed: (){
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => HomeScreen() )
+                        );
+                      },
                       child: Text("Register", style: TextStyle(
                         fontSize: 16,
                         letterSpacing: 3,
@@ -223,7 +229,9 @@ class SignupScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 5.0,),
                 TextButton(onPressed: (){
-                  Get.toNamed("/LoginScreen");
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginScreen() )
+                  );
                 },
                     child: Text("Already have an account? Login here",
                       style: TextStyle(fontSize: 14, color: Colors.white70),))

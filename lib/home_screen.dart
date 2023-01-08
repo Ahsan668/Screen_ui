@@ -104,7 +104,9 @@ class HomeScreen extends StatelessWidget {
                             width: 80,
                             child: GestureDetector(
                               onTap: (){
-
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) => DonyProfileScreen() )
+                                );
                               },
                               child: Image.asset("assets/images/mark.png",
                               fit: BoxFit.cover,
@@ -131,6 +133,9 @@ class HomeScreen extends StatelessWidget {
                             width: 80,
                             child: GestureDetector(
                               onTap: (){
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) => SandyProfileScreen() )
+                                );
                                 },
                               child: Image.asset("assets/images/sandy.png",
                                 fit: BoxFit.cover,
@@ -158,6 +163,9 @@ class HomeScreen extends StatelessWidget {
                             width: 80,
                             child: GestureDetector(
                               onTap: (){
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) => SrkProfileScreen() )
+                                );
                               },
                               child: Image.asset("assets/images/srk.png",
                                 fit: BoxFit.cover,
@@ -184,7 +192,11 @@ class HomeScreen extends StatelessWidget {
                             height: 80,
                             width: 80,
                             child: GestureDetector(
-                              onTap: (){},
+                              onTap: (){
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) => DonyProfileScreen() )
+                                );
+                              },
                               child: Image.asset("assets/images/lony.jpg",
                                 fit: BoxFit.cover,
                               ),
@@ -219,6 +231,9 @@ class HomeScreen extends StatelessWidget {
                             width: 80,
                             child: GestureDetector(
                               onTap: (){
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) => DonyProfileScreen() )
+                                );
                               },
                               child: Image.asset("assets/images/dony.png",
                                 fit: BoxFit.cover,
@@ -245,6 +260,9 @@ class HomeScreen extends StatelessWidget {
                             width: 80,
                             child: GestureDetector(
                               onTap: (){
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) => HritikProfileScreen() )
+                                );
                               },
                               child: Image.asset("assets/images/hritik.png",
                                 fit: BoxFit.cover,
@@ -271,7 +289,11 @@ class HomeScreen extends StatelessWidget {
                             height: 80,
                             width: 80,
                             child: GestureDetector(
-                              onTap: (){},
+                              onTap: (){
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) => JellyProfileScreen() )
+                                );
+                              },
                               child: Image.asset("assets/images/mark.png",
                                 fit: BoxFit.cover,
                               ),
@@ -298,6 +320,9 @@ class HomeScreen extends StatelessWidget {
                             width: 80,
                             child: GestureDetector(
                               onTap: (){
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) => JellyProfileScreen() )
+                                );
                               },
                               child: Image.asset("assets/images/Jelly.jpg",
                                 fit: BoxFit.cover,

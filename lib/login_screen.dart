@@ -4,12 +4,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:screen_ui/GetAppRoute.dart';
 import 'package:screen_ui/signup_screen.dart';
 
+import 'home_screen.dart';
+
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Container(
         color: const Color(0xff333436),
@@ -166,7 +168,10 @@ class LoginScreen extends StatelessWidget {
                         primary: Colors.transparent,
                       ),
                       onPressed: () {
-                      },
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => HomeScreen() )
+                        );
+                        },
                       child: const Text(
                         "Login",
                         style: TextStyle(
@@ -185,8 +190,9 @@ class LoginScreen extends StatelessWidget {
                 ),
                 
                 TextButton(onPressed: (){
-                  Get.toNamed('SignupScreen');
-                debugPrint("TO SignupPage");
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignupScreen())
+                  );
                   },
                     child: Text("Don't have an account? Register here",
                       style: TextStyle(fontSize: 14, color: Colors.white70),)),
